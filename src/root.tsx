@@ -1,16 +1,18 @@
-import { Counter } from "./components/counter/counter";
-import { Logo } from "./components/logo/logo";
+import { $ } from '@builder.io/qwik';
+import { QwButton } from './components/qw-button/qw-button';
 
 export default () => {
+  const handleCLick = $(() => {
+    alert();
+  });
   return (
     <>
       <head>
-        <meta charSet="utf-8" />
+        <meta charSet='utf-8' />
         <title>Qwik Blank App</title>
       </head>
       <body>
-        <Logo />
-        <Counter />
+        <QwButton onClick$={handleCLick}>My button</QwButton>
       </body>
     </>
   );

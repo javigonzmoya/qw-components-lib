@@ -1,5 +1,5 @@
 {
-  "name": "my-qwik-library-name",
+  "name": "qw-components-lib",
   "version": "0.0.1",
   "description": "Create a reusable Qwik component library",
   "main": "./lib/index.qwik.mjs",
@@ -44,6 +44,7 @@
     "eslint-plugin-qwik": "latest",
     "np": "7.6.1",
     "prettier": "3.0.0",
+    "sass": "^1.66.1",
     "typescript": "5.1.6",
     "undici": "5.22.1",
     "vite": "4.4.7",
