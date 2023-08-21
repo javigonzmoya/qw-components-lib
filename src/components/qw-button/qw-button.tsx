@@ -8,14 +8,18 @@ import {
 } from '@builder.io/qwik';
 import styles from './qw-button.scss?inline';
 
-interface QwButtonProps {
+export interface QwButtonProps {
   ariaLabel?: string;
+  /** this is variant button component */
   variant?: 'primary' | 'secondary' | 'tertiary';
+  /** this is role button button or link */
   role?: 'button' | 'link';
-  disabled?: false;
+  /** this is disabed attribute */
+  disabled?: boolean;
+  /** this event void click */
   onClick$?: PropFunction<() => void>;
 }
-
+/** this is action button component */
 export const QwButton = component$<QwButtonProps>(
   ({ ariaLabel = '', role = 'button', disabled = false, onClick$ }) => {
     useStylesScoped$(styles);
