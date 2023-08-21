@@ -1,0 +1,36 @@
+import { useEffect, useState } from 'react';
+
+export const TableDocs = ({ category, path }) => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch(' /design-tokens.source.json')
+      .then((response) => response.json())
+      .then(({ scssTokens }) => {
+        const mapdata = scssTokens.categories.find(
+          ({ name, source }) => name === category && source.endsWith(path)
+        );
+        setData(mapdata.tokens ?? []);
+      });
+  }, []);
+  return (
+    <>
+      <h2>{category}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Custom Property Name</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(({ name, rawValue }, i) => (
+            <tr key={i}>
+              <td>{name}</td>
+              <td>{rawValue}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  );
+};

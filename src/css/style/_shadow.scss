@@ -1,0 +1,20 @@
+.docs {
+  /**
+  * @tokens Shadows
+  * @presenter Shadow
+  */
+  --qw-shadow-50-main: 0 0 0 0.5px #333;
+  --qw-shadow-100-main: 0 3px 10px 0 rgba(#333, 0.3);
+  --qw-shadow-100-main-top: 0 -5px 5px -5px rgba(#333, 0.3);
+  /**
+    * @tokens-end
+    */
+}
+
+$-shadow-tokens: (
+  shadow-50-main: 0 0 0 0.5px #333,
+  shadow-100-main: 0 3px 10px 0 rgba(#333, 0.3),
+  shadow-100-main-top: 0 -5px 5px -5px rgba(#333, 0.3),
+);
+
+$tokens: $-shadow-tokens;

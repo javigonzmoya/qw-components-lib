@@ -1,0 +1,34 @@
+.docs {
+  /**
+  * @tokens Opacity
+  * @presenter Opacity
+  */
+  --qw-opacity-0: 0;
+  --qw-opacity-10: 0.1;
+  --qw-opacity-15: 0.15;
+  --qw-opacity-25: 0.25;
+  --qw-opacity-30: 0.3;
+  --qw-opacity-50: 0.5;
+  --qw-opacity-60: 0.6;
+  --qw-opacity-75: 0.75;
+  --qw-opacity-90: 0.9;
+  --qw-opacity-100: 1;
+  /**
+  * @tokens-end
+  */
+}
+
+$-opacity-tokens: (
+  opacity-0: 0,
+  opacity-10: 0.1,
+  opacity-15: 0.15,
+  opacity-25: 0.25,
+  opacity-30: 0.3,
+  opacity-50: 0.5,
+  opacity-60: 0.6,
+  opacity-75: 0.75,
+  opacity-90: 0.9,
+  opacity-100: 1,
+);
+
+$tokens: $-opacity-tokens;

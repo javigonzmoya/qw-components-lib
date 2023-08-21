@@ -1,0 +1,53 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta
+  title='Design System/Getting started/Overview'
+  parameters={{
+    previewTabs: { canvas: { hidden: true } },
+    docsOnly: true,
+  }}
+/>
+
+# Overview QW Design System.
+
+QW design system consists on a library of [QWIK](https://qwik.builder.io/) components that implements a common design for applications.
+
+## Design Tokens
+
+Library created with tokens to allow components to be customizable at two levels. Global level or general tokens and specific tokens for each component. You can make changes at the global level or changes at the individual level. The component-level token takes precedence over the global-level token.
+
+### Global Customize
+
+```css
+root: {
+  --qw-color-primary: red;
+  // the background QWbutton is red.
+}
+```
+
+### Component Customize
+
+```css
+root: {
+  --qw-button-primary-background-color: blue;
+  // the background QWbutton is blue.
+}
+```
+
+### Both Customize
+
+```css
+root: {
+  --qw-color-primary: red;
+  --qw-button-primary-background-color: blue;
+  // The background QWbutton is blue.
+}
+```
+
+## Technical Properties
+
+Each component has a set of properties, the most of them coincide with the figma attributes specified in the designs, but there are others needed by technical requirements. These `technical properties` are marked with an asterisk `*️⃣` in the `Playground of the component`, and they are commonly needed to be specified.
+
+## Accesibility properties
+
+It is important to build applications accesible to everyone. Omnia provides properties for include aria attribute and support screen readers. These `accesibility properties` are marked with an icon `👨🏻‍🦯` in the `Playground of the component`.

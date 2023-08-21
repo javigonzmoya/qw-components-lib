@@ -1,0 +1,459 @@
+@use '../../css/tokens' as token;
+
+@mixin token-docs {
+  /**s
+  * @tokens Borders
+  * @presenter Border
+  */
+  --qw-button-border-radius: var(--qw-shape-round-100);
+  --qw-button-border-width: var(--qw-size-10);
+  --qw-button-primary-border-color: var(--qw-color-primary);
+  --qw-button-primary-hover-border-color: var(--qw-color-neutral-02-main);
+  --qw-button-primary-active-border-color: var(--qw-color-neutral-01-50);
+  --qw-button-primary-disabled-border-color: var(--qw-color-neutral-02-30);
+  --qw-button-secondary-border-color: var(--qw-color-secondary);
+  --qw-button-border-style: var(--qw-border-style-solid);
+  --qw-button-secondary-hover-border-color: var(--qw-color-neutral-02-main);
+  --qw-button-secondary-active-border-color: var(--qw-color-neutral-01-50);
+  --qw-button-secondary-disabled-border-color: var(--qw-color-neutral-02-30);
+  --qw-button-tertiary-border-color: var(--qw-color-tertiary);
+  --qw-button-tertiary-hover-border-color: var(--qw-color-tertiary);
+  --qw-button-tertiary-active-border-color: var(--qw-color-tertiary);
+  --qw-button-tertiary-disabled-border-color: var(--qw-color-neutral-02-30);
+  --qw-button-link-border-color: var(--qw-color-neutral-03-main);
+  --qw-button-link-hover-border-color: var(--qw-color-neutral-03-main);
+  --qw-button-link-active-border-color: var(--qw-color-neutral-03-main);
+  --qw-button-link-disabled-border-color: var(--qw-color-neutral-03-main);
+
+  /**
+  * @tokens FontSizes
+  * @presenter FontSize
+  */
+  --qw-button-font-size: var(--qw-font-size-100);
+  /**
+  * @tokens LineHeights
+  * @presenter LineHeight
+  */
+  --qw-button-line-height: var(--qw-line-height-100);
+  /**
+  * @tokens FontWeights
+  * @presenter FontWeight
+  */
+  --qw-button-font-weight: var(--qw-font-weight-500);
+  /**
+  * @tokens FontFamilies
+  * @presenter FontFamily
+  */
+  --qw-button-font-family: var(--qw-font-family-primary);
+  /**
+  * @tokens Size-Spacing
+  * @presenter Spacing
+  */
+  --qw-button-x-padding: var(--qw-spacing-150);
+  --qw-button-y-padding: var(--qw-spacing-100);
+  --qw-button-column-gap: var(--qw-spacing-50);
+
+  /**
+  * @tokens Colors
+  * @presenter Color
+  */
+  --qw-button-box-shadow: none;
+  --qw-button-primary-background-color: var(--qw-color-primary);
+  --qw-button-primary-text-color: var(--qw-color-neutral-03-main);
+  --qw-button-primary-hover-text-color: var(--qw-color-neutral-03-main);
+  --qw-button-primary-hover-background-color: var(--qw-color-neutral-02-main);
+  --qw-button-primary-active-text-color: var(--qw-color-neutral-03-main);
+  --qw-button-primary-active-background-color: var(--qw-color-neutral-01-50);
+  --qw-button-primary-disabled-text-color: var(--qw-color-neutral-01-main);
+  --qw-button-primary-disabled-background-color: var(--qw-color-neutral-02-30);
+  --qw-button-secondary-background-color: var(--qw-color-secondary);
+  --qw-button-secondary-text-color: var(--qw-color-neutral-03-main);
+  --qw-button-secondary-hover-text-color: var(--qw-color-neutral-03-main);
+  --qw-button-secondary-hover-background-color: var(--qw-color-neutral-02-main);
+  --qw-button-secondary-active-text-color: var(--qw-color-neutral-03-main);
+  --qw-button-secondary-active-background-color: var(--qw-color-neutral-01-50);
+  --qw-button-secondary-disabled-text-color: var(--qw-color-neutral-01-main);
+  --qw-button-secondary-disabled-background-color: var(
+    --qw-color-neutral-02-30
+  );
+  --qw-button-tertiary-background-color: var(--qw-color-neutral-03-main);
+  --qw-button-tertiary-text-color: var(--qw-color-tertiary);
+  --qw-button-tertiary-hover-text-color: var(--qw-color-neutral-03-main);
+  --qw-button-tertiary-hover-background-color: var(--qw-color-tertiary);
+  --qw-button-tertiary-active-text-color: var(--qw-color-neutral-02-20);
+  --qw-button-tertiary-active-background-color: var(--qw-color-tertiary);
+  --qw-button-tertiary-disabled-text-color: var(--qw-color-neutral-01-main);
+  --qw-button-tertiary-disabled-background-color: var(--qw-color-neutral-02-30);
+  --qw-button-link-background-color: var(--qw-color-neutral-03-main);
+  --qw-button-link-text-color: var(--qw-color-primary);
+  --qw-button-link-hover-text-color: var(--qw-color-neutral-02-main);
+  --qw-button-link-hover-background-color: var(--qw-color-neutral-03-main);
+  --qw-button-link-active-text-color: var(--qw-color-neutral-01-80);
+  --qw-button-link-active-background-color: var(--qw-color-neutral-03-main);
+  --qw-button-link-disabled-text-color: var(--qw-color-neutral-02-main);
+  --qw-button-link-disabled-background-color: var(--qw-color-neutral-03-main);
+}
+
+@mixin qw-button-border-radius {
+  border-radius: var(--qw-button-border-radius, token.get('shape-round-100'));
+}
+
+@mixin qw-button-font-size {
+  font-size: var(--qw-button-font-size, token.get('size-100'));
+}
+
+@mixin qw-button-font-family {
+  font-family: var(--qw-button-font-family, token.get('font-family-primary'));
+}
+
+@mixin qw-button-font-weight {
+  font-weight: var(--qw-button-font-weight, token.get('font-weight-500'));
+}
+
+@mixin qw-button-line-height {
+  line-height: var(--qw-button-line-height, token.get('size-50'));
+}
+
+@mixin qw-button-border-width {
+  border-width: var(--qw-button-border-width, token.get('size-10'));
+}
+
+@mixin qw-button-border-style {
+  border-style: var(--qw-button-border-style, token.get('border-style-solid'));
+}
+
+@mixin qw-button-padding {
+  padding: var(--qw-button-x-padding, token.get('spacing-150'))
+    var(--qw-button-y-padding, token.get('spacing-100'));
+}
+
+@mixin qw-button-column-gap {
+  column-gap: var(--qw-button-column-gap, token.get('spacing-50'));
+}
+
+@mixin qw-button-box-shadow {
+  box-shadow: var(--qw-button-box-shadow, none);
+}
+
+@mixin qw-button-primary-background-color {
+  background-color: var(
+    --qw-button-primary-background-color,
+    token.get('color-primary')
+  );
+}
+
+@mixin qw-button-primary-text-color {
+  color: var(
+    --qw-button-primary-text-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-primary-border-color {
+  border-color: var(
+    --qw-button-primary-border-color,
+    token.get('color-primary')
+  );
+}
+
+@mixin qw-button-primary-hover-text-color {
+  color: var(
+    --qw-button-primary-hover-text-color,
+    token.get('color-neutral-03-main')
+  );
+}
+@mixin qw-button-primary-hover-background-color {
+  background-color: var(
+    --qw-button-primary-hover-background-color,
+    token.get('color-neutral-02-main')
+  );
+}
+@mixin qw-button-primary-hover-border-color {
+  border-color: var(
+    --qw-button-primary-hover-border-color,
+    token.get('color-neutral-02-main')
+  );
+}
+
+@mixin qw-button-primary-active-text-color {
+  color: var(
+    --qw-button-primary-active-text-color,
+    token.get('color-neutral-03-main')
+  );
+}
+@mixin qw-button-primary-active-background-color {
+  background-color: var(
+    --qw-button-primary-active-background-color,
+    token.get('color-neutral-01-50')
+  );
+}
+
+@mixin qw-button-primary-active-border-color {
+  border-color: var(
+    --qw-button-primary-active-border-color,
+    token.get('color-neutral-01-50')
+  );
+}
+
+@mixin qw-button-primary-disabled-text-color {
+  color: var(
+    --qw-button-primary-disabled-text-color,
+    token.get('color-neutral-01-main')
+  );
+}
+
+@mixin qw-button-primary-disabled-background-color {
+  background-color: var(
+    --qw-button-primary-disabled-background-color,
+    token.get('color-neutral-02-30')
+  );
+}
+
+@mixin qw-button-primary-disabled-border-color {
+  border-color: var(
+    --qw-button-primary-disabled-border-color,
+    token.get('color-neutral-02-30')
+  );
+}
+
+@mixin qw-button-secondary-background-color {
+  background-color: var(
+    --qw-button-secondary-background-color,
+    token.get('color-secondary')
+  );
+}
+@mixin qw-button-secondary-text-color {
+  color: var(
+    --qw-button-secondary-text-color,
+    token.get('color-neutral-03-main')
+  );
+}
+@mixin qw-button-secondary-border-color {
+  border-color: var(
+    --qw-button-secondary-border-color,
+    token.get('color-secondary')
+  );
+}
+
+@mixin qw-button-secondary-hover-text-color {
+  color: var(
+    --qw-button-secondary-hover-text-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-secondary-hover-background-color {
+  background-color: var(
+    --qw-button-secondary-hover-background-color,
+    token.get('color-neutral-02-main')
+  );
+}
+
+@mixin qw-button-secondary-hover-border-color {
+  border-color: var(
+    --qw-button-secondary-hover-border-color,
+    token.get('color-neutral-02-main')
+  );
+}
+
+@mixin qw-button-secondary-active-text-color {
+  color: var(
+    --qw-button-secondary-active-text-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-secondary-active-background-color {
+  background-color: var(
+    --qw-button-secondary-active-background-color,
+    token.get('color-neutral-01-50')
+  );
+}
+
+@mixin qw-button-secondary-active-border-color {
+  border-color: var(
+    --qw-button-secondary-active-border-color,
+    token.get('color-neutral-01-50')
+  );
+}
+
+@mixin qw-button-secondary-disabled-text-color {
+  color: var(
+    --qw-button-secondary-disabled-text-color,
+    token.get('color-neutral-01-main')
+  );
+}
+
+@mixin qw-button-secondary-disabled-background-color {
+  background-color: var(
+    --qw-button-secondary-disabled-background-color,
+    token.get('color-neutral-02-30')
+  );
+}
+
+@mixin qw-button-secondary-disabled-border-color {
+  border-color: var(
+    --qw-button-secondary-disabled-border-color,
+    token.get('color-neutral-02-30')
+  );
+}
+
+@mixin qw-button-tertiary-background-color {
+  background-color: var(
+    --qw-button-tertiary-background-color,
+    token.get('color-neutral-03-main')
+  );
+}
+@mixin qw-button-tertiary-text-color {
+  color: var(--qw-button-tertiary-text-color, token.get('color-tertiary'));
+}
+@mixin qw-button-tertiary-border-color {
+  border-color: var(
+    --qw-button-tertiary-border-color,
+    token.get('color-tertiary')
+  );
+}
+
+@mixin qw-button-tertiary-hover-text-color {
+  color: var(
+    --qw-button-tertiary-hover-text-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-tertiary-hover-background-color {
+  background-color: var(
+    --qw-button-tertiary-hover-background-color,
+    token.get('color-tertiary')
+  );
+}
+
+@mixin qw-button-tertiary-hover-border-color {
+  border-color: var(
+    --qw-button-tertiary-hover-border-color,
+    token.get('color-tertiary')
+  );
+}
+
+@mixin qw-button-tertiary-active-text-color {
+  color: var(
+    --qw-button-tertiary-active-text-color,
+    token.get('color-neutral-02-20')
+  );
+}
+
+@mixin qw-button-tertiary-active-background-color {
+  background-color: var(
+    --qw-button-tertiary-active-background-color,
+    token.get('color-tertiary')
+  );
+}
+
+@mixin qw-button-tertiary-active-border-color {
+  border-color: var(
+    --qw-button-tertiary-active-border-color,
+    token.get('color-tertiary')
+  );
+}
+
+@mixin qw-button-tertiary-disabled-text-color {
+  color: var(
+    --qw-button-tertiary-disabled-text-color,
+    token.get('color-neutral-01-main')
+  );
+}
+
+@mixin qw-button-tertiary-disabled-background-color {
+  background-color: var(
+    --qw-button-tertiary-disabled-background-color,
+    token.get('color-neutral-02-30')
+  );
+}
+
+@mixin qw-button-tertiary-disabled-border-color {
+  border-color: var(
+    --qw-button-tertiary-disabled-border-color,
+    token.get('color-neutral-02-30')
+  );
+}
+
+@mixin qw-button-link-background-color {
+  background-color: var(
+    --qw-button-link-background-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-link-text-color {
+  color: var(--qw-button-link-text-color, token.get('color-primary'));
+}
+
+@mixin qw-button-link-border-color {
+  border-color: var(
+    --qw-button-link-border-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-link-hover-text-color {
+  color: var(
+    --qw-button-link-hover-text-color,
+    token.get('color-neutral-02-main')
+  );
+}
+
+@mixin qw-button-link-hover-background-color {
+  background-color: var(
+    --qw-button-link-hover-background-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-link-hover-border-color {
+  border-color: var(
+    --qw-button-link-hover-border-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-link-active-text-color {
+  color: var(
+    --qw-button-link-active-text-color,
+    token.get('color-neutral-01-80')
+  );
+}
+
+@mixin qw-button-link-active-background-color {
+  background-color: var(
+    --qw-button-link-active-background-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-link-active-border-color {
+  border-color: var(
+    --qw-button-link-active-border-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-link-disabled-text-color {
+  color: var(
+    --qw-button-link-disabled-text-color,
+    token.get('color-neutral-02-main')
+  );
+}
+
+@mixin qw-button-link-disabled-background-color {
+  background-color: var(
+    --qw-button-link-disabled-background-color,
+    token.get('color-neutral-03-main')
+  );
+}
+
+@mixin qw-button-link-disabled-border-color {
+  border-color: var(
+    --qw-button-link-disabled-border-color,
+    token.get('color-neutral-03-main')
+  );
+}

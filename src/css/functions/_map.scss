@@ -1,0 +1,28 @@
+/* stylelint-disable at-rule-no-unknown */
+@use 'sass:meta';
+@use 'sass:map';
+
+@function multimerge($maps...) {
+  $collection: ();
+
+  @each $map in $maps {
+    $collection: map.merge($collection, $map);
+  }
+
+  @return $collection;
+}
+
+@function transform($map, $transformationFn, $rest: false) {
+  $collection: ();
+
+  @each $prop, $value in $map {
+    $transformed: if(
+      $rest,
+      meta.call($transformationFn, $prop, $value, $rest),
+      meta.call($transformationFn, $prop, $value)
+    );
+    $collection: map.merge($collection, $transformed);
+  }
+
+  @return $collection;
+}

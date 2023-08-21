@@ -1,4 +1,116 @@
+@use '../../css/tokens' as token;
+@use './hooks' as *;
+
 .qw-button {
-  background-color: var(--qw-button-background-color, blue);
-  color: var(--qw-button-text-color, white);
+  @include qw-button-border-radius;
+  @include qw-button-font-family;
+  @include qw-button-font-weight;
+  @include qw-button-font-size;
+  @include qw-button-line-height;
+  @include qw-button-border-width;
+  @include qw-button-border-style;
+  @include qw-button-padding;
+  @include qw-button-column-gap;
+  @include qw-button-box-shadow;
+  margin: 0;
+  display: inline-flex;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &--full {
+    width: 100%;
+  }
+
+  &--primary {
+    @include qw-button-primary-background-color;
+    @include qw-button-primary-text-color;
+    @include qw-button-primary-border-color;
+
+    &:hover {
+      @include qw-button-primary-hover-text-color;
+      @include qw-button-primary-hover-background-color;
+      @include qw-button-primary-hover-border-color;
+    }
+    &:active {
+      @include qw-button-primary-active-text-color;
+      @include qw-button-primary-active-background-color;
+      @include qw-button-primary-active-border-color;
+    }
+    &:disabled {
+      @include qw-button-primary-disabled-text-color;
+      @include qw-button-primary-disabled-background-color;
+      @include qw-button-primary-disabled-border-color;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    @include qw-button-secondary-background-color;
+    @include qw-button-secondary-text-color;
+    @include qw-button-secondary-border-color;
+
+    &:hover {
+      @include qw-button-secondary-hover-text-color;
+      @include qw-button-secondary-hover-background-color;
+      @include qw-button-secondary-hover-border-color;
+    }
+    &:active {
+      @include qw-button-secondary-disabled-border-color;
+      @include qw-button-secondary-disabled-border-color;
+      @include qw-button-secondary-disabled-border-color;
+    }
+    &:disabled {
+      @include qw-button-secondary-disabled-text-color;
+      @include qw-button-secondary-disabled-background-color;
+      @include qw-button-secondary-disabled-border-color;
+      cursor: not-allowed;
+    }
+  }
+
+  &--tertiary {
+    @include qw-button-tertiary-background-color;
+    @include qw-button-tertiary-text-color;
+    @include qw-button-tertiary-border-color;
+
+    &:hover {
+      @include qw-button-tertiary-hover-text-color;
+      @include qw-button-tertiary-hover-background-color;
+      @include qw-button-tertiary-hover-border-color;
+    }
+    &:active {
+      @include qw-button-tertiary-active-text-color;
+      @include qw-button-tertiary-active-background-color;
+      @include qw-button-tertiary-active-border-color;
+    }
+    &:disabled {
+      @include qw-button-tertiary-disabled-text-color;
+      @include qw-button-tertiary-disabled-background-color;
+      @include qw-button-tertiary-disabled-border-color;
+      cursor: not-allowed;
+    }
+  }
+  &--link {
+    @include qw-button-link-background-color;
+    @include qw-button-link-text-color;
+    @include qw-button-link-border-color;
+    &:hover {
+      @include qw-button-link-hover-text-color;
+      @include qw-button-link-hover-background-color;
+      @include qw-button-link-hover-border-color;
+    }
+    &:active {
+      @include qw-button-link-active-text-color;
+      @include qw-button-link-active-background-color;
+      @include qw-button-link-active-border-color;
+    }
+    &:disabled {
+      @include qw-button-link-disabled-text-color;
+      @include qw-button-link-disabled-background-color;
+      @include qw-button-link-disabled-border-color;
+      cursor: not-allowed;
+    }
+  }
 }
