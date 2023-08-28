@@ -1,0 +1,23 @@
+@use './sizes-and-spacing/sizes-and-spacing' as spacing;
+@use './color/palete' as palette;
+@use './typography/typography' as typography;
+@use './style/opacity' as opacity;
+@use './style/border' as border;
+@use './style/shape' as shape;
+@use './style/shadow' as shadow;
+@use './functions/map';
+@use './functions/utils' as utils;
+
+$-tokens: map.multimerge(
+  spacing.$tokens,
+  palette.$tokens,
+  typography.$tokens,
+  opacity.$tokens,
+  border.$tokens,
+  shape.$tokens,
+  shadow.$tokens
+);
+
+@function get($token) {
+  @return utils.use-css-var($-tokens, $token);
+}

@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta
+  title='Design System/Getting started/Components visualization'
+  parameters={{
+    previewTabs: { canvas: { hidden: true } },
+    docsOnly: true,
+  }}
+/>
+
+import docs from './images/docs.png';
+import storiesExample from './images/story-example.png';
+import tokenSection from './images/token-section.png';
+import controlSection from './images/control-section.png';
+import tokens from './images/tokens.png';
+
+# Component visualization
+
+The components visualization at this storybook is divided in three sections: `Tokens`, `docs` and `stories examples`.
+
+## Tokens
+
+The tokens section is doc where all the component's custom properties are listed with a name and value.
+
+<img src={tokens} alt='tokens visualization' />
+
+## Docs
+
+The docs section includes more details about the component, its properties, slots and events. It can be consulted alternatively to the playgound.
+
+<img src={docs} alt='Docs visualization' />
+
+## Stories Examples
+
+The `Stories Examples` section shows the differents variants and states of the components, with the needed properties.
+
+<img src={storiesExample} alt='Stories visualization' />
+
+### Control Section
+
+<img src={controlSection} alt='Stories visualization' />
+
+### Token Section
+
+<img src={tokenSection} alt='Stories visualization' />

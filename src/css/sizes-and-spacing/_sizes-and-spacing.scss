@@ -1,0 +1,115 @@
+@use '../functions/map';
+.qw-spacing {
+  /**
+  * @tokens Size-Spacing
+  * @presenter Spacing
+  */
+  --qw-spacing-0: 0;
+  --qw-spacing-10: 1px;
+  --qw-spacing-25: 2px;
+  --qw-spacing-50: 4px;
+  --qw-spacing-75: 6px;
+  --qw-spacing-100: 8px;
+  --qw-spacing-150: 12px;
+  --qw-spacing-200: 16px;
+  --qw-spacing-250: 20px;
+  --qw-spacing-300: 24px;
+  --qw-spacing-400: 32px;
+  --qw-spacing-500: 40px;
+  --qw-spacing-600: 48px;
+  --qw-spacing-700: 56px;
+  --qw-spacing-800: 64px;
+
+  --qw-size-auto: auto;
+  --qw-size-half: 50%;
+  --qw-size-full: 100%;
+  --qw-size-0: 0;
+  --qw-size-10: 1px;
+  --qw-size-20: 2px;
+  --qw-size-30: 4px;
+  --qw-size-50: 8px;
+  --qw-size-75: 12px;
+  --qw-size-100: 16px;
+  --qw-size-150: 18px;
+  --qw-size-200: 20px;
+  --qw-size-300: 24px;
+  --qw-size-400: 32px;
+  --qw-size-500: 40px;
+  --qw-size-600: 48px;
+  --qw-size-700: 56px;
+  --qw-size-750: 60px;
+  --qw-size-800: 64px;
+  --qw-size-900: 72px;
+  --qw-size-1000: 80px;
+  --qw-size-icon-100: 16px;
+  --qw-size-icon-200: 24px;
+  --qw-size-icon-300: 32px;
+  --qw-size-icon-400: 48px;
+  --qw-size-icon-500: 64px;
+  --qw-size-icon-600: 72px;
+  --qw-size-icon-700: 80px;
+
+  --qw-size-icon-100: 16px;
+  --qw-size-icon-200: 24px;
+  --qw-size-icon-300: 32px;
+  --qw-size-icon-400: 48px;
+  --qw-size-icon-500: 64px;
+  --qw-size-icon-600: 72px;
+  --qw-size-icon-700: 80px;
+  /**
+  * @tokens-end
+  */
+}
+
+$-spacing: (
+  spacing-0: 0,
+  spacing-10: 1px,
+  spacing-25: 2px,
+  spacing-50: 4px,
+  spacing-75: 6px,
+  spacing-100: 8px,
+  spacing-150: 12px,
+  spacing-200: 16px,
+  spacing-250: 20px,
+  spacing-300: 24px,
+  spacing-400: 32px,
+  spacing-500: 40px,
+  spacing-600: 48px,
+  spacing-700: 56px,
+  spacing-800: 64px,
+);
+
+$-size: (
+  size-auto: auto,
+  size-half: 50%,
+  size-full: 100%,
+  size-0: 0,
+  size-10: 1px,
+  size-20: 2px,
+  size-30: 4px,
+  size-50: 8px,
+  size-75: 12px,
+  size-100: 16px,
+  size-150: 18px,
+  size-200: 20px,
+  size-300: 24px,
+  size-400: 32px,
+  size-500: 40px,
+  size-600: 48px,
+  size-700: 56px,
+  size-750: 60px,
+  size-800: 64px,
+  size-900: 72px,
+  size-1000: 80px,
+);
+$-size-icon: (
+  size-icon-100: 16px,
+  size-icon-200: 24px,
+  size-icon-300: 32px,
+  size-icon-400: 48px,
+  size-icon-500: 64px,
+  size-icon-600: 72px,
+  size-icon-700: 80px,
+);
+
+$tokens: map.multimerge($-size, $-size-icon, $-spacing);

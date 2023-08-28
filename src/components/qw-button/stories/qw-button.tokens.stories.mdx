@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs';
+import { TableDocs } from '../../../docs/utils/TableDocs.mdx';
+
+<Meta
+  title='UI - Elements/Action Elements/QwButton/Tokens'
+  parameters={{
+    previewTabs: { canvas: { hidden: true } },
+    docsOnly: true,
+  }}
+/>
+
+# Tokens QwButton
+
+you can customice your app setting value token.
+
+## Use Exampe
+
+```css
+root: {
+  --qw-button-border-radius: 10px;
+  --qw-button-border-width: 4px;
+  --qw-button-border-style: solid;
+  // more..
+}
+```
+
+## List token/custom props
+
+<TableDocs category={'Colors'} path={'qw-button/_hooks.scss'} />
+<TableDocs category={'Borders'} path={'qw-button/_hooks.scss'} />
+<TableDocs category={'FontSizes'} path={'qw-button/_hooks.scss'} />
+<TableDocs category={'LineHeights'} path={'qw-button/_hooks.scss'} />
+<TableDocs category={'Size-Spacing'} path={'qw-button/_hooks.scss'} />

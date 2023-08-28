@@ -1,0 +1,28 @@
+/* stylelint-disable at-rule-no-unknown */
+@use 'sass:meta';
+@use 'sass:map';
+@use './map' as customMap;
+
+@function use-css-var($tokens, $token) {
+  $value: map.get($tokens, $token);
+
+  @if $value {
+    @return var(--qw-#{$token}, $value);
+  } @else {
+    @warn "";
+
+    @error 'Token "#{$token}" not defined in the mixin you are looking for. Check stacktrace in the terminal for more detail';
+  }
+}
+
+@function apply-css-prop($token, $value, $cssProp) {
+  @return (#{$token}: (#{$cssProp}: var(--opf-#{$token}, $value)));
+}
+
+@function generate-css-from-tokens($tokens, $cssProp) {
+  @return customMap.transform(
+    $tokens,
+    meta.get-function('apply-css-prop'),
+    $cssProp
+  );
+}

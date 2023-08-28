@@ -1,0 +1,21 @@
+import { Meta } from '@storybook/addon-docs';
+import { TableDocs } from '../utils/TableDocs.mdx';
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks';
+
+<Meta title='Design System/Design Tokens/Shadow' />
+
+# Tokens Shadow
+
+You can customice your app setting value token.
+
+## Use Exampe
+
+```css
+root: {
+  --qw-shadow-50-main: 0 0 0 0.5px red;
+  --qw-shadow-100-main: 0 3px 3px 0 rgba(green, 0.3);
+  // more..
+}
+```
+
+<TableDocs path={'_shadow.scss'} category={'Shadows'} />

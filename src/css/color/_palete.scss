@@ -1,0 +1,66 @@
+// this block token docs
+.qw-colors {
+  /**
+    * @tokens Colors
+    * @presenter Color
+    */
+  --qw-color-primary: #006ce9;
+  --qw-color-secondary: #18b6f6;
+  --qw-color-tertiary: #ac7ff4;
+  --qw-color-danger: #e51029;
+  --qw-color-success: #008535;
+  --qw-color-neutral-01-main: #121417;
+  --qw-color-neutral-01-80: #333;
+  --qw-color-neutral-01-50: #666;
+  --qw-color-neutral-01-05: #f6f6f6;
+  --qw-color-neutral-02-main: #89949e;
+  --qw-color-neutral-02-30: #d0d5d9;
+  --qw-color-neutral-02-20: #e6e9ec;
+  --qw-color-neutral-03-main: #fff;
+  --qw-color-primary-gradient-a: linear-gradient(
+    90deg,
+    #2da3d0 0%,
+    #006085 100%
+  );
+  --qw-color-secondary-gradient-b: linear-gradient(
+    90deg,
+    #2da3d0 0%,
+    #007eae 100%
+  );
+  --qw-color-tertiary-gradient-c: linear-gradient(
+    90deg,
+    #007eae 0%,
+    #006085 100%
+  );
+  --qw-color-danger-gradient-d: linear-gradient(90deg, #fff 0%, #f6f6f6 100%);
+  --qw-color-success-gradient-d: linear-gradient(90deg, #fff 0%, #f6f6f6 100%);
+  /**
+  * @tokens-end
+  */
+}
+
+$-palette: (
+  color-primary: #006ce9,
+  color-secondary: #18b6f6,
+  color-tertiary: #ac7ff4,
+  color-danger: #e51029,
+  color-success: #008535,
+  color-neutral-01-main: #121417,
+  color-neutral-01-80: #333,
+  color-neutral-01-50: #666,
+  color-neutral-01-05: #f6f6f6,
+  color-neutral-02-main: #89949e,
+  color-neutral-02-30: #d0d5d9,
+  color-neutral-02-20: #e6e9ec,
+  color-neutral-03-main: #fff,
+  color-primary-gradient-a: linear-gradient(90deg, #2da3d0 0%, #006085 100%),
+  color-secondary-gradient-b: linear-gradient(90deg, #2da3d0 0%, #007eae 100%),
+  color-tertiary-gradient-c: linear-gradient(90deg, #007eae 0%, #006085 100%),
+  color-danger-gradient-d: linear-gradient(90deg, #fff 0%, #f6f6f6 100%),
+  color-success-gradient-d: linear-gradient(90deg, #fff 0%, #f6f6f6 100%),
+);
+$tokens: $-palette;
+
+@function get($token) {
+  @return utils.use-css-var($-tokens, $token);
+}

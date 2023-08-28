@@ -1,0 +1,23 @@
+.docs {
+  /**
+  * @tokens BordersRadius
+  * @presenter BorderRadius
+  */
+  --qw-shape-plain: 0;
+  --qw-shape-round-50: 4px;
+  --qw-shape-round-100: 8px;
+  --qw-shape-round-200: 16px;
+  --qw-shape-circle: 100vh;
+  /**
+    * @tokens-end
+    */
+}
+$-shape-tokens: (
+  shape-plain: 0,
+  shape-round-50: 4px,
+  shape-round-100: 8px,
+  shape-round-200: 16px,
+  shape-circle: 100vh,
+);
+
+$tokens: $-shape-tokens;

@@ -1,0 +1,24 @@
+import { Meta } from '@storybook/addon-docs';
+import { TableDocs } from '../utils/TableDocs.mdx';
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks';
+
+<Meta title='Design System/Design Tokens/Typography' />
+
+# Tokens Typography
+
+You can customice your app setting value token.
+
+## Use Exampe
+
+```css
+root: {
+  --qw-font-size: 20px;
+  --qw-font-style: none;
+  // more..
+}
+```
+
+<TableDocs path={'_typography.scss'} category={'FontFamilies'} />
+<TableDocs path={'_typography.scss'} category={'FontSizes'} />
+<TableDocs path={'_typography.scss'} category={'LineHeights'} />
+<TableDocs path={'_typography.scss'} category={'LetterSpacings'} />

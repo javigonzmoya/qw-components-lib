@@ -9,10 +9,19 @@ export default () => {
     <>
       <head>
         <meta charSet='utf-8' />
+        <link rel='stylesheet' href='/src/root.css' />
         <title>Qwik Blank App</title>
       </head>
       <body>
-        <QwButton onClick$={handleCLick}>My button</QwButton>
+        <QwButton class={'token'} onClick$={handleCLick}>
+          My button
+        </QwButton>
+        <QwButton size='full' onClick$={handleCLick}>
+          My button full
+        </QwButton>
+        <QwButton disabled size='full' onClick$={handleCLick}>
+          My button full disabled
+        </QwButton>
       </body>
     </>
   );

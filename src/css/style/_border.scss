@@ -1,0 +1,39 @@
+.docs {
+  /**
+  * @tokens Borders
+  * @presenter Border
+  */
+  --qw-border-style-solid: solid;
+  --qw-border-style-dashed: dashed;
+  --qw-border-style-none: none;
+  --qw-border-width-0: 0;
+  --qw-border-width-100: 1px;
+  --qw-border-width-200: 2px;
+  --qw-border-width-300: 4px;
+  --qw-border-width-400: 6px;
+  --qw-border-width-500: 8px;
+  --qw-border-width-600: 10px;
+  --qw-border-width-700: 12px;
+  /**
+  * @tokens-end
+  */
+}
+
+$-border-style-tokens: (
+  border-style-solid: solid,
+  border-style-dashed: dashed,
+  border-style-none: none,
+);
+
+$-border-width-tokens: (
+  border-width-0: 0,
+  border-width-100: 1px,
+  border-width-200: 2px,
+  border-width-300: 4px,
+  border-width-400: 6px,
+  border-width-500: 8px,
+  border-width-600: 10px,
+  border-width-700: 12px,
+);
+
+$tokens: $-border-style-tokens;
