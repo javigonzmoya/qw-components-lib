@@ -1,0 +1,129 @@
+@use '../../css/tokens' as token;
+@use '../../css/layout' as bp;
+@use './hooks' as *;
+
+$gaps: 's-0', 's-10', 's-25', 's-50', 's-75', 's-100', 's-150', 's-200', 's-250',
+  's-300', 's-400', 's-500';
+$alignItems: 'stretch', 'start', 'end', 'center', 'baseline';
+$justifyContent: 'start', 'end', 'center', 'space-between', 'space-around',
+  'space-evenly';
+
+.qw-grid {
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  @each $value in $alignItems {
+    &-align-items--#{$value} {
+      align-items: #{$value};
+    }
+  }
+
+  @each $value in $justifyContent {
+    &-justify-content--#{$value} {
+      justify-content: #{$value};
+    }
+  }
+
+  @each $value in $gaps {
+    &-row-gap--#{$value} {
+      @if $value == s-0 {
+        @include grid-row-gap-s-0;
+      }
+
+      @if $value == s-10 {
+        @include grid-row-gap-s-10;
+      }
+
+      @if $value == s-25 {
+        @include grid-row-gap-s-25;
+      }
+
+      @if $value == s-50 {
+        @include grid-row-gap-s-50;
+      }
+
+      @if $value == s-75 {
+        @include grid-row-gap-s-75;
+      }
+
+      @if $value == s-100 {
+        @include grid-row-gap-s-100;
+      }
+
+      @if $value == s-150 {
+        @include grid-row-gap-s-150;
+      }
+
+      @if $value == s-200 {
+        @include grid-row-gap-s-200;
+      }
+
+      @if $value == s-250 {
+        @include grid-row-gap-s-250;
+      }
+
+      @if $value == s-300 {
+        @include grid-row-gap-s-300;
+      }
+
+      @if $value == s-400 {
+        @include grid-row-gap-s-400;
+      }
+
+      @if $value == s-500 {
+        @include grid-row-gap-s-500;
+      }
+    }
+    &-column-gap--#{$value} {
+      @if $value == s-0 {
+        @include grid-column-gap-s-0;
+      }
+
+      @if $value == s-10 {
+        @include grid-column-gap-s-10;
+      }
+
+      @if $value == s-25 {
+        @include grid-column-gap-s-25;
+      }
+
+      @if $value == s-50 {
+        @include grid-column-gap-s-50;
+      }
+
+      @if $value == s-75 {
+        @include grid-column-gap-s-75;
+      }
+
+      @if $value == s-100 {
+        @include grid-column-gap-s-100;
+      }
+
+      @if $value == s-150 {
+        @include grid-column-gap-s-150;
+      }
+
+      @if $value == s-200 {
+        @include grid-column-gap-s-200;
+      }
+
+      @if $value == s-250 {
+        @include grid-column-gap-s-250;
+      }
+
+      @if $value == s-300 {
+        @include grid-column-gap-s-300;
+      }
+
+      @if $value == s-400 {
+        @include grid-column-gap-s-400;
+      }
+
+      @if $value == s-500 {
+        @include grid-column-gap-s-500;
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use '../../../css/tokens' as token;
+@use '../../../css/layout/breakpoints' as bp;
+@use 'sass:map';
+
+$cols: '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '12';
+$-map-gap: (
+  's-0': spacing-0,
+  's-10': spacing-10,
+  's-25': spacing-25,
+  's-50': spacing-50,
+  's-75': spacing-75,
+  's-100': spacing-100,
+  's-150': spacing-150,
+  's-200': spacing-200,
+  's-250': spacing-250,
+  's-300': spacing-300,
+  's-400': spacing-400,
+  's-500': spacing-500,
+);
+
+@function apply-calc($gap, $col) {
+  @if $col == '12' {
+    @return 100%;
+  }
+
+  $space: 0%;
+
+  @if $gap != s-0 {
+    $space: calc(token.get(map.get($-map-gap, $gap)));
+  }
+
+  $widthOneCol: calc((100% - ($space * 11)) / 12);
+
+  @return calc(#{$widthOneCol} * #{$col} + (#{$space} * (#{$col} - 1)));
+}
+
+.qw-grid-item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@container ((min-width:#{bp.get('breakpoint-xs')}) and (max-width: #{bp.get('breakpoint-sm')})) {
+  @each $col in $cols {
+    @each $gap, $name in $-map-gap {
+      [data-column-gap='#{$gap}'][data-xs-col='#{$col}'] {
+        width: apply-calc($gap, $col);
+      }
+    }
+  }
+}
+
+@container ((min-width: #{bp.get('breakpoint-sm')}) and (max-width: #{bp.get('breakpoint-md')})) {
+  @each $col in $cols {
+    @each $gap, $name in $-map-gap {
+      [data-column-gap='#{$gap}'][data-sm-col='#{$col}'] {
+        width: apply-calc($gap, $col);
+        //  flex-basis: apply-calc($gap, $col);
+      }
+    }
+  }
+}
+
+@container ((min-width: #{bp.get('breakpoint-md')}) and (max-width: #{bp.get('breakpoint-lg')})) {
+  @each $gap, $name in $-map-gap {
+    @each $col in $cols {
+      [data-column-gap='#{$gap}'][data-md-col='#{$col}'] {
+        width: apply-calc($gap, $col);
+      }
+    }
+  }
+}
+
+@container ((min-width:#{bp.get('breakpoint-lg')}) and (max-width:#{bp.get('breakpoint-xl')})) {
+  @each $col in $cols {
+    @each $gap, $name in $-map-gap {
+      [data-column-gap='#{$gap}'][data-lg-col='#{$col}'] {
+        width: apply-calc($gap, $col);
+      }
+    }
+  }
+}
+
+@container ((min-width: #{bp.get('breakpoint-xl')}) and (max-width: #{bp.get('breakpoint-xxl')})) {
+  @each $col in $cols {
+    @each $gap, $name in $-map-gap {
+      [data-column-gap='#{$gap}'][data-xl-col='#{$col}'] {
+        width: apply-calc($gap, $col);
+      }
+    }
+  }
+}
+
+@container (min-width: #{bp.get('breakpoint-xxl')}) {
+  @each $col in $cols {
+    @each $gap, $name in $-map-gap {
+      [data-column-gap='#{$gap}'][data-xxl-col='#{$col}'] {
+        width: apply-calc($gap, $col);
+      }
+    }
+  }
+}
