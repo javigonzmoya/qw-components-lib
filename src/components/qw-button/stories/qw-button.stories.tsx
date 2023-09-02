@@ -7,12 +7,20 @@ const meta: Meta<QwButtonProps> = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
+      description:
+        'variant to button comopent primary | secondary | tertiary | link',
+      defaultValue: 'primary',
+      type: 'string',
       options: ['primary', 'secondary', 'tertiary', 'link'],
       control: { type: 'select' },
     },
     size: {
       options: ['auto', 'full'],
       control: { type: 'select' },
+    },
+    onClick$: {
+      description: 'event click exacute',
+      type: 'function',
     },
   },
 };

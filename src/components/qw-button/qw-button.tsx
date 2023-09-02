@@ -13,7 +13,7 @@ export interface QwButtonProps {
    */
   ariaLabel?: string;
   /**
-   * this is variant button component
+   * @description  this is variant button component
    */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
   /**
@@ -33,12 +33,13 @@ export interface QwButtonProps {
    */
   onClick$?: PropFunction<() => void>;
   /**
-   * this custom class css
+   *  @description  this custom class css
    */
   class?: string;
 }
 /**
- *  this is UI button component
+ * @description this is UI button component
+ * @prop variant is a simple prop
  */
 export const QwButton = component$<QwButtonProps>(
   ({

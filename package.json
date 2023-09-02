@@ -51,7 +51,8 @@
     "test:unit": "vitest components",
     "test:unit:ui": "vitest --ui components",
     "test:coverage": "vitest run --coverage",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "tokens:generate": "node ./src/scripts/generate-tokens.js ../../src/css/tokens.global.js qw"
   },
   "devDependencies": {
     "@builder.io/qwik": "1.2.7",

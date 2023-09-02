@@ -1,0 +1,13 @@
+$-breakpoint: (
+  breakpoint-xs: 0px,
+  breakpoint-sm: 576px,
+  breakpoint-md: 768px,
+  breakpoint-lg: 811px,
+  breakpoint-xl: 1019px,
+  breakpoint-xxl: 1219px,
+);
+$tokens: $-breakpoint;
+
+@function get($key) {
+  @return map-get($tokens, $key);
+}
