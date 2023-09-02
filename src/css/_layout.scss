@@ -1,0 +1,9 @@
+@use './layout/breakpoints' as mediaQueries;
+@use './functions/map';
+@use './functions/utils' as utils;
+
+$-tokens: map.multimerge(mediaQueries.$tokens);
+
+@function get($token) {
+  @return utils.use-css-var($-tokens, $token);
+}

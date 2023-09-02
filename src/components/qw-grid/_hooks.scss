@@ -1,0 +1,104 @@
+@use '../../css/tokens' as token;
+
+@mixin token-docs {
+  /**
+  * @tokens Size-Spacing
+  * @presenter Spacing
+  */
+}
+
+@mixin grid-column-gap-s-0 {
+  column-gap: var(--qw-grid-column-gap-s-0, token.get('spacing-0'));
+}
+
+@mixin grid-column-gap-s-10 {
+  column-gap: var(--qw-grid-column-gap-s-10, token.get('spacing-10'));
+}
+
+@mixin grid-column-gap-s-25 {
+  column-gap: var(--qw-grid-column-gap-s-25, token.get('spacing-25'));
+}
+
+@mixin grid-column-gap-s-50 {
+  column-gap: var(--qw-grid-column-gap-s-50, token.get('spacing-50'));
+}
+
+@mixin grid-column-gap-s-75 {
+  column-gap: var(--qw-grid-column-gap-s-75, token.get('spacing-75'));
+}
+
+@mixin grid-column-gap-s-100 {
+  column-gap: var(--qw-grid-column-gap-s-100, token.get('spacing-100'));
+}
+
+@mixin grid-column-gap-s-150 {
+  column-gap: var(--qw-grid-column-gap-s-150, token.get('spacing-150'));
+}
+
+@mixin grid-column-gap-s-200 {
+  column-gap: var(--qw-grid-column-gap-s-200, token.get('spacing-200'));
+}
+
+@mixin grid-column-gap-s-250 {
+  column-gap: var(--qw-grid-column-gap-s-250, token.get('spacing-250'));
+}
+
+@mixin grid-column-gap-s-300 {
+  column-gap: var(--qw-grid-column-gap-s-300, token.get('spacing-300'));
+}
+
+@mixin grid-column-gap-s-400 {
+  column-gap: var(--qw-grid-column-gap-s-400, token.get('spacing-400'));
+}
+
+@mixin grid-column-gap-s-500 {
+  column-gap: var(--qw-grid-column-gap-s-500, token.get('spacing-500'));
+}
+
+@mixin grid-row-gap-s-0 {
+  row-gap: var(--qw-grid-row-gap-s-0, token.get('spacing-0'));
+}
+
+@mixin grid-row-gap-s-10 {
+  row-gap: var(--qw-grid-row-gap-s-10, token.get('spacing-10'));
+}
+
+@mixin grid-row-gap-s-25 {
+  row-gap: var(--qw-grid-row-gap-s-25, token.get('spacing-25'));
+}
+
+@mixin grid-row-gap-s-50 {
+  row-gap: var(--qw-grid-row-gap-s-50, token.get('spacing-50'));
+}
+
+@mixin grid-row-gap-s-75 {
+  row-gap: var(--qw-grid-row-gap-s-75, token.get('spacing-75'));
+}
+
+@mixin grid-row-gap-s-100 {
+  row-gap: var(--qw-grid-row-gap-s-100, token.get('spacing-100'));
+}
+
+@mixin grid-row-gap-s-150 {
+  row-gap: var(--qw-grid-row-gap-s-150, token.get('spacing-150'));
+}
+
+@mixin grid-row-gap-s-200 {
+  row-gap: var(--qw-grid-row-gap-s-200, token.get('spacing-200'));
+}
+
+@mixin grid-row-gap-s-250 {
+  row-gap: var(--qw-grid-row-gap-s-250, token.get('spacing-250'));
+}
+
+@mixin grid-row-gap-s-300 {
+  row-gap: var(--qw-grid-row-gap-s-300, token.get('spacing-300'));
+}
+
+@mixin grid-row-gap-s-400 {
+  row-gap: var(--qw-grid-row-gap-s-400, token.get('spacing-400'));
+}
+
+@mixin grid-row-gap-s-500 {
+  row-gap: var(--qw-grid-row-gap-s-500, token.get('spacing-500'));
+}
