@@ -1,0 +1,183 @@
+@mixin qw-button-line-height {
+  line-height: var(--qw-button-line-height);
+}
+@mixin qw-button-font-size {
+  font-size: var(--qw-button-font-size);
+}
+@mixin qw-button-font-weight {
+  font-weight: var(--qw-button-font-weight);
+}
+@mixin qw-button-font-family {
+  font-family: var(--qw-button-font-family);
+}
+@mixin qw-button-border-radius {
+  border-radius: var(--qw-button-border-radius);
+}
+
+@mixin qw-button-border-width {
+  name_rule: var(--qw-button-border-width);
+}
+
+@mixin qw-button-border-style {
+  name_rule: var(--qw-button-border-style);
+}
+
+@mixin qw-button-box-shadow {
+  name_rule: var(--qw-button-box-shadow);
+}
+
+@mixin qw-button-column-gap {
+  column-gap: var(--qw-button-column-gap);
+}
+
+@mixin qw-button-x-padding-shadow {
+  box-shadow: var(--qw-button-x-padding-shadow);
+}
+
+@mixin qw-button-y-padding-shadow {
+  name_rule: var(--qw-button-y-padding-shadow);
+}
+@mixin qw-button-primary-hover-border-color {
+  name_rule: var(--qw-button-primary-hover-border-color);
+}
+@mixin qw-button-primary-hover-text-color {
+  name_rule: var(--qw-button-primary-hover-text-color);
+}
+@mixin qw-button-primary-hover-background-color {
+  name_rule: var(--qw-button-primary-hover-background-color);
+}
+@mixin qw-button-primary-active-border-color {
+  name_rule: var(--qw-button-primary-active-border-color);
+}
+@mixin qw-button-primary-active-text-color {
+  name_rule: var(--qw-button-primary-active-text-color);
+}
+@mixin qw-button-primary-active-background-color {
+  name_rule: var(--qw-button-primary-active-background-color);
+}
+@mixin qw-button-primary-disabled-border-color {
+  name_rule: var(--qw-button-primary-disabled-border-color);
+}
+@mixin qw-button-primary-disabled-text-color {
+  name_rule: var(--qw-button-primary-disabled-text-color);
+}
+@mixin qw-button-primary-disabled-background-color {
+  name_rule: var(--qw-button-primary-disabled-background-color);
+}
+@mixin qw-button-primary-background-color {
+  name_rule: var(--qw-button-primary-background-color);
+}
+@mixin qw-button-primary-text-color {
+  name_rule: var(--qw-button-primary-text-color);
+}
+@mixin qw-button-primary-border-color {
+  name_rule: var(--qw-button-primary-border-color);
+}
+@mixin qw-button-secondary-hover-border-color {
+  name_rule: var(--qw-button-secondary-hover-border-color);
+}
+@mixin qw-button-secondary-hover-text-color {
+  name_rule: var(--qw-button-secondary-hover-text-color);
+}
+@mixin qw-button-secondary-hover-background-color {
+  name_rule: var(--qw-button-secondary-hover-background-color);
+}
+@mixin qw-button-secondary-active-border-color {
+  name_rule: var(--qw-button-secondary-active-border-color);
+}
+@mixin qw-button-secondary-active-text-color {
+  name_rule: var(--qw-button-secondary-active-text-color);
+}
+@mixin qw-button-secondary-active-background-color {
+  name_rule: var(--qw-button-secondary-active-background-color);
+}
+@mixin qw-button-secondary-disabled-border-color {
+  name_rule: var(--qw-button-secondary-disabled-border-color);
+}
+@mixin qw-button-secondary-disabled-text-color {
+  name_rule: var(--qw-button-secondary-disabled-text-color);
+}
+@mixin qw-button-secondary-disabled-background-color {
+  name_rule: var(--qw-button-secondary-disabled-background-color);
+}
+@mixin qw-button-secondary-background-color {
+  name_rule: var(--qw-button-secondary-background-color);
+}
+@mixin qw-button-secondary-text-color {
+  name_rule: var(--qw-button-secondary-text-color);
+}
+@mixin qw-button-secondary-border-color {
+  name_rule: var(--qw-button-secondary-border-color);
+}
+@mixin qw-button-tertiary-hover-border-color {
+  name_rule: var(--qw-button-tertiary-hover-border-color);
+}
+@mixin qw-button-tertiary-hover-text-color {
+  name_rule: var(--qw-button-tertiary-hover-text-color);
+}
+@mixin qw-button-tertiary-hover-background-color {
+  name_rule: var(--qw-button-tertiary-hover-background-color);
+}
+@mixin qw-button-tertiary-active-border-color {
+  name_rule: var(--qw-button-tertiary-active-border-color);
+}
+@mixin qw-button-tertiary-active-text-color {
+  name_rule: var(--qw-button-tertiary-active-text-color);
+}
+@mixin qw-button-tertiary-active-background-color {
+  name_rule: var(--qw-button-tertiary-active-background-color);
+}
+@mixin qw-button-tertiary-disabled-border-color {
+  name_rule: var(--qw-button-tertiary-disabled-border-color);
+}
+@mixin qw-button-tertiary-disabled-text-color {
+  name_rule: var(--qw-button-tertiary-disabled-text-color);
+}
+@mixin qw-button-tertiary-disabled-background-color {
+  name_rule: var(--qw-button-tertiary-disabled-background-color);
+}
+@mixin qw-button-tertiary-background-color {
+  name_rule: var(--qw-button-tertiary-background-color);
+}
+@mixin qw-button-tertiary-text-color {
+  name_rule: var(--qw-button-tertiary-text-color);
+}
+@mixin qw-button-tertiary-border-color {
+  name_rule: var(--qw-button-tertiary-border-color);
+}
+@mixin qw-button-link-hover-border-color {
+  name_rule: var(--qw-button-link-hover-border-color);
+}
+@mixin qw-button-link-hover-text-color {
+  name_rule: var(--qw-button-link-hover-text-color);
+}
+@mixin qw-button-link-hover-background-color {
+  name_rule: var(--qw-button-link-hover-background-color);
+}
+@mixin qw-button-link-active-border-color {
+  name_rule: var(--qw-button-link-active-border-color);
+}
+@mixin qw-button-link-active-text-color {
+  name_rule: var(--qw-button-link-active-text-color);
+}
+@mixin qw-button-link-active-background-color {
+  name_rule: var(--qw-button-link-active-background-color);
+}
+@mixin qw-button-link-disabled-border-color {
+  name_rule: var(--qw-button-link-disabled-border-color);
+}
+@mixin qw-button-link-disabled-text-color {
+  name_rule: var(--qw-button-link-disabled-text-color);
+}
+@mixin qw-button-link-disabled-background-color {
+  name_rule: var(--qw-button-link-disabled-background-color);
+}
+@mixin qw-button-link-background-color {
+  name_rule: var(--qw-button-link-background-color);
+}
+@mixin qw-button-link-text-color {
+  name_rule: var(--qw-button-link-text-color);
+}
+@mixin qw-button-link-border-color {
+  name_rule: var(--qw-button-link-border-color);
+}

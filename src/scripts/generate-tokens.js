@@ -1,38 +1,43 @@
+import { readdirSync, statSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
+import { format, join, normalize } from 'node:path';
 import { argv } from 'node:process';
-import { parse, format, normalize } from 'node:path';
-import { writeFile } from 'node:fs/promises';
+import { tokensToCss } from './utils/handle-tokens.js';
+import { saveFile } from './utils/handle-files.js';
+// Custom helpers sort out presenter to storybook design tokens addons
 
-const tokensToCss = (object = {}, base = `-`) =>
-  Object.entries(object).reduce((css, [key, value]) => {
-    if (key === 'type') return css;
-    let newBase = `${base}${key !== 'value' ? `-${key}` : ''}`;
-    if (typeof value !== 'object') {
-      return `${css}${newBase}: ${value};\n`;
-    }
-    return `${css}${tokensToCss(value, newBase)}`;
-  }, ``);
+const ROOT = './src/';
+const EXT_SEARCH = 'token.json';
 
-const saveTokens = async (name, tokens) => {
-  try {
-    await writeFile(`./src/${name}.css`, tokens);
-  } catch (e) {
-    console.log('There was an error while saving a file.\n', e);
-  }
+const getDirectoriesRecursively = (directoryPath) => {
+  return readdirSync(directoryPath)
+    .flatMap((file) => {
+      const filePath = join(directoryPath, file);
+      const stat = statSync(filePath);
+      if (stat.isDirectory()) {
+        return getDirectoriesRecursively(filePath);
+      }
+      return filePath;
+    })
+    .filter((el) => el.endsWith(EXT_SEARCH));
 };
 
 const main = async () => {
   try {
-    const [path, prefix = '', scope = ':root'] = argv.slice(2);
-    const tokensPath = format({ root: './', base: normalize(path) });
-    const { tokens } = await import(tokensPath);
-    const { name } = parse(tokensPath);
-
-    const cssVariables = tokensToCss(tokens, `--${prefix}`);
-    const cssClass = `${scope} {\n${cssVariables.replaceAll('--', '  --')}}\n`;
-    saveTokens(name, cssClass);
+    const [fileName, prefix = '', scope = ':root'] = argv.slice(2);
+    const filesToken = getDirectoriesRecursively(ROOT);
+    let cssVariables = '';
+    for (const path of filesToken) {
+      const tokensPath = format({ root: './', base: normalize(path) });
+      const data = await readFile(tokensPath);
+      const tokens = JSON.parse(data.toString());
+      cssVariables += tokensToCss(tokens, `--${prefix}`, true);
+    }
+    const content = `${scope} {\n${cssVariables.replaceAll('--', '  --')}}\n`;
+    saveFile({ path: ROOT, fileName, content, ext: 'css' });
   } catch (e) {
     console.log(
-      'Provide a correct argument - a relative path to design tokens.\n',
+      'Provide a incorrect argument - no exist path to token.json.\n',
       e
     );
   }

@@ -63,7 +63,6 @@ $-map-gap: (
     @each $gap, $name in $-map-gap {
       [data-column-gap='#{$gap}'][data-sm-col='#{$col}']:not([data-col]) {
         width: apply-calc($gap, $col);
-        //  flex-basis: apply-calc($gap, $col);
       }
     }
   }
